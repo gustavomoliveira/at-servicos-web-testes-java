@@ -3,9 +3,7 @@ import org.example.controller.MensalistaController;
 import org.example.model.Mensalista;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.HashMap;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -37,7 +35,6 @@ public class MensalistaControllerTest {
 
         verify(context).status(201);
         verify(context).json(mensalista);
-
         assertTrue(MensalistaController.mensalistas.containsValue(mensalista));
         assertTrue(mensalista.getMatricula() > 0);
     }
@@ -90,7 +87,6 @@ public class MensalistaControllerTest {
 
         verify(context).status(200);
         verify(context).json(MensalistaController.mensalistas);
-
         assertFalse(MensalistaController.mensalistas.isEmpty());
         assertEquals(1, MensalistaController.mensalistas.size());
     }
